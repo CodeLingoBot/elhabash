@@ -655,7 +655,7 @@ func (f *Fetcher) NewClient(withProxy, withMirror bool) *Client {
 		maxIdleConns = 1
 	}
 	transport := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: false},
 		Dial: (&net.Dialer{
 			Timeout:       ClientTimeout * time.Second,
 			KeepAlive:     keepAlive,
